@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ethiopian date to Gregorian date and Gregorian Date to Ethiopian date</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTmEQcyhsev3RY_Rqg4rY35VTnD5l_NBNsI1xFU6Xn5TDD5P8mBR4izQ3ci0EmrHQFwWc&usqp=CAU">
+	<script> function isGregorianLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+
+        function isEthiopianLeapYear(year) {
+            return (year % 4 === 3) || ((year % 4 === 2) && (year % 100 !== 3));
+        }
+
+        function convertToGregorian() {
+            const ethiopianYear = parseInt(document.getElementById('ethiopianYear').value);
+            const ethiopianMonth = parseInt(document.getElementById('ethiopianMonth').value);
+            const ethiopianDay = parseInt(document.getElementById('ethiopianDay').value);
+
+            let gregorianYear, gregorianMonth, gregorianDay;
+
+            if (ethiopianMonth >= 1 && ethiopianMonth <= 13 && ethiopianDay >= 1 && ethiopianDay <= 30) {
+                if (ethiopianMonth <= 10) {
+                    gregorianYear = ethiopianYear + 8;
+                    gregorianMonth = ethiopianMonth + 3;
+                } else {
+                    gregorianYear = ethiopianYear + 9;
+                    gregorianMonth = ethiopianMonth - 9;
+                }
+
+                if (ethiopianMonth === 13 && !isEthiopianLeapYear(ethiopianYear)) {
+                    gregorianMonth = 12;
+                }
+
+                gregorianDay = ethiopianDay;
+
+                document.getElementById('gregorianResult').textContent = `Gregorian Date: ${gregorianYear}-${gregorianMonth}-${gregorianDay}`;
+            } else {
+                document.getElementById('gregorianResult').textContent = "Invalid Ethiopian date.";
+            }
+        }
+
+        function convertToEthiopian() {
+            const gregorianYear = parseInt(document.getElementById('gregorianYear').value);
+            const gregorianMonth = parseInt(document.getElementById('gregorianMonth').value);
+            const gregorianDay = parseInt(document.getElementById('gregorianDay').value);
+
+            let ethiopianYear, ethiopianMonth, ethiopianDay;
+
+            if (gregorianMonth >= 1 && gregorianMonth <= 12 && gregorianDay >= 1 && gregorianDay <= 31) {
+                if (gregorianMonth <= 2) {
+                    ethiopianYear = gregorianYear - 8;
+                    ethiopianMonth = gregorianMonth + 9;
+                } else {
+                    ethiopianYear = gregorianYear - 7;
+                    ethiopianMonth = gregorianMonth - 2;
+                }
+
+                ethiopianDay = gregorianDay;
+
+                if (gregorianMonth === 1 && gregorianDay === 1) {
+                    ethiopianMonth = 13;
+                    ethiopianDay = 1;
+                }
+
+                document.getElementById('ethiopianResult').textContent = `Ethiopian Date: ${ethiopianYear}-${ethiopianMonth}-${ethiopianDay}`;
+            } else {
+                document.getElementById('ethiopianResult').textContent = "Invalid Gregorian date.";
+            }
+        }
+		</script>
+</head>
+<body>
+	<img src="https://cdn.britannica.com/12/12-004-A40EEB6F/Flag-Ethiopia.jpg" alt="Ethiopian Flag" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+	<header>
+		<div class="container">
+			<h1> Ethiopian date to Gregorian date and Gregorian Date to Ethiopian date </h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+					<li><a href="about-geez.html">About Geez</a></li>
+					<li><a href="about-amharic.html">About Amharic</a></li>
+					<li><a href="currency-converter.html">Currency Converter</a></li>
+                    <li><a href="ec-to-gc.html">Ethiopian date to Gregorian date</a></li>
+                    
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section>
+			<body>
+				<h1>Ethiopian to Gregorian Date Converter</h1>
+    
+				<label for="ethiopianYear">Ethiopian Year (e.g., 2013):</label>
+				<input type="number" id="ethiopianYear"><br>
+				
+				<label for="ethiopianMonth">Ethiopian Month (1-13):</label>
+				<input type="number" id="ethiopianMonth"><br>
+				
+				<label for="ethiopianDay">Ethiopian Day (1-30):</label>
+				<input type="number" id="ethiopianDay"><br>
+				
+				<button onclick="convertToGregorian()">Convert to Gregorian</button>
+				
+				<p id="gregorianResult"></p>
+				
+				<hr>
+				
+				<h1>Gregorian to Ethiopian Date Converter</h1>
+				
+				<label for="gregorianYear">Gregorian Year (e.g., 2023):</label>
+				<input type="number" id="gregorianYear"><br>
+				
+				<label for="gregorianMonth">Gregorian Month (1-12):</label>
+				<input type="number" id="gregorianMonth"><br>
+				
+				<label for="gregorianDay">Gregorian Day (1-31):</label>
+				<input type="number" id="gregorianDay"><br>
+				
+				<button onclick="convertToEthiopian()">Convert to Ethiopian</button>
+				
+				<p id="ethiopianResult"></p>
+		</section>
+	</main>
+	<footer>
+		<!-- Map on the left -->
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d985.143021058102!2d38.81275512572886!3d9.011463192833272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85d050c6e95d%3A0x53bf64de6873274!2sRas%20Agez%20Supermarket!5e0!3m2!1sen!2set!4v1696019662532!5m2!1sen!2set" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	
+		<!-- Email and Phone number on the right -->
+		<div class="contact-info">
+			<h2 class="h2">Phone Number:- <a href="tel:+251-904262728">+251-904262728</a></h2>
+			<h2 class="h2"> Email:-<a href="mailto:nsc.eth@gamil.com">nsc.eth@gamil.com</a></h2>
+		</div>
+	
+		<!-- Clear the floats to ensure proper alignment -->
+		<p>&copy; 2023 About Ethiopia(NSC)</p>
+	</footer>
+	
+</body>
+</html>

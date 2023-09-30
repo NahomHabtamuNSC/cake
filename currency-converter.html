@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Currency Converter</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTmEQcyhsev3RY_Rqg4rY35VTnD5l_NBNsI1xFU6Xn5TDD5P8mBR4izQ3ci0EmrHQFwWc&usqp=CAU"
+		/>
+		<script>
+			function convert() {
+				const Rate = {
+					USD: {
+						EUR: 0.85,
+						ETB: 41.5,
+						INR: 74.50,
+						GBP: 0.75,
+						CAD: 1.25,
+						JPY: 109.50,
+						AUD: 1.35,
+						RUB: 70.25,
+						AED: 3.67,
+						ILS: 3.25,
+					},
+					EUR: {
+						USD: 1.18,
+						ETB: 48.88,
+						INR: 88.75,
+						GBP: 0.88,
+						CAD: 1.48,
+						JPY: 130.50,
+						AUD: 1.65,
+						RUB: 86.75,
+						AED: 4.50,
+						ILS: 4.00,
+					},
+					ETB: {
+						USD: 0.024,
+						EUR: 0.020,
+						INR: 1.59,
+						GBP: 0.014,
+						CAD: 0.024,
+						JPY: 2.63,
+						AUD: 0.028,
+						RUB: 1.35,
+						AED: 0.097,
+						ILS: 0.086,
+					},
+					INR: {
+						USD: 0.013,
+						EUR: 0.011,
+						ETB: 0.63,
+						GBP: 0.011,
+						CAD: 0.018,
+						JPY: 1.58,
+						AUD: 0.021,
+						RUB: 1.10,
+						AED: 0.057,
+						ILS: 0.050,
+					},
+					GBP: {
+						USD: 1.33,
+						EUR: 1.13,
+						ETB: 69.70,
+						INR: 94.50,
+						CAD: 1.67,
+						JPY: 146.00,
+						AUD: 1.87,
+						RUB: 97.50,
+						AED: 5.05,
+						ILS: 4.50,
+					},
+					CAD: {
+						USD: 0.80,
+						EUR: 0.67,
+						ETB: 41.00,
+						INR: 54.75,
+						GBP: 0.60,
+						JPY: 88.50,
+						AUD: 1.10,
+						RUB: 57.75,
+						AED: 2.98,
+						ILS: 2.65,
+					},
+					JPY: {
+						USD: 0.0091,
+						EUR: 0.0077,
+						ETB: 0.38,
+						INR: 0.63,
+						GBP: 0.0068,
+						CAD: 0.011,
+						AUD: 0.012,
+						RUB: 0.52,
+						AED: 0.027,
+						ILS: 0.024,
+					},
+					AUD: {
+						USD: 0.74,
+						EUR: 0.61,
+						ETB: 36.75,
+						INR: 46.50,
+						GBP: 0.53,
+						CAD: 0.91,
+						JPY: 80.50,
+						RUB: 52.75,
+						AED: 2.73,
+						ILS: 2.42,
+					},
+					RUB: {
+						USD: 0.014,
+						EUR: 0.011,
+						ETB: 0.74,
+						INR: 0.91,
+						GBP: 0.010,
+						CAD: 0.017,
+						JPY: 1.92,
+						AUD: 0.019,
+						AED: 0.052,
+						ILS: 0.046,
+					},
+					AED: {
+						USD: 0.27,
+						EUR: 0.22,
+						ETB: 10.28,
+						INR: 18.50,
+						GBP: 0.20,
+						CAD: 0.33,
+						JPY: 9.62,
+						AUD: 0.37,
+						RUB: 19.18,
+						ILS: 0.92,
+					},
+					ILS: {
+						USD: 0.31,
+						EUR: 0.26,
+						ETB: 11.60,
+						INR: 20.00,
+						GBP: 0.22,
+						CAD: 0.38,
+						JPY: 10.75,
+						AUD: 0.41,
+						RUB: 21.75,
+						AED: 1.09,
+					},
+				};
+
+				const amount = parseFloat(document.getElementById("amount").value);
+				const from = document.getElementById("from").value;
+				const to = document.getElementById("to").value;
+				const value = Rate[from][to] * amount;
+				document.getElementById("value").value = value.toFixed(2) + " " + to;
+			}
+		</script>
+	</head>
+	<body>
+		<img src="https://cdn.britannica.com/12/12-004-A40EEB6F/Flag-Ethiopia.jpg" alt="Ethiopian Flag" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+		<header>
+			<div class="container">
+				<h1>Currency Converter</h1>
+				<nav>
+					<ul>
+						<li><a href="contact_form.html">Contact Us</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about-geez.html">About Geez</a></li>
+						<li><a href="about-amharic.html">About Amharic</a></li>
+						<li><a href="ec-to-gc.html">Ethiopian date to Gregorian date</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section>
+				<div class="container">
+					<h2>Ethiopian Birr (ETB) Converter</h2>
+					<p>
+						Use this currency converter to convert Ethiopian Birr (ETB) to other
+						currencies.
+					</p> <h1>Last Update on 6:31 9/30/2023</h1>
+					<form id="form">
+						<label for="amount">Amount:</label>
+						<input type="number" id="amount" name="amount" required />
+						<label for="from">From:</label>
+						<select id="from" name="from" required>
+							<option value="ETB">Ethiopian Birr (ETB)</option>
+							<option value="USD">US Dollar (USD)</option>
+							<option value="EUR">Euro (EUR)</option>
+							<option value="INR">Indian Rupee (INR)</option>
+							<option value="GBP">British Pound (GBP)</option>
+							<option value="CAD">Canadian Dollar (CAD)</option>
+							<option value="JPY">Japanese Yen (JPY)</option>
+							<option value="AUD">Australian Dollar (AUD)</option>
+							<option value="RUB">Russian Ruble (RUB)</option>
+							<option value="AED">United Arab Emirates Dirham (AED)</option>
+							<option value="ILS">Israeli New Shekel (ILS)</option>
+						</select>
+						<label for="to">To:</label>
+						<select id="to" name="to" required>
+							<option value="USD">US Dollar (USD)</option>
+							<option value="EUR">Euro (EUR)</option>
+							<option value="ETB">Ethiopian Birr (ETB)</option>
+							<option value="INR">Indian Rupee (INR)</option>
+							<option value="GBP">British Pound (GBP)</option>
+							<option value="CAD">Canadian Dollar (CAD)</option>
+							<option value="JPY">Japanese Yen (JPY)</option>
+							<option value="AUD">Australian Dollar (AUD)</option>
+							<option value="RUB">Russian Ruble (RUB)</option>
+							<option value="AED">United Arab Emirates Dirham (AED)</option>
+							<option value="ILS">Israeli New Shekel (ILS)</option>
+						</select>
+						<label for="amount">Value:</label>
+						<input disabled id="value" />
+						<button type="button" onclick="convert()">Convert</button>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<!-- Map on the left -->
+			<div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d985.143021058102!2d38.81275512572886!3d9.011463192833272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85d050c6e95d%3A0x53bf64de6873274!2sRas%20Agez%20Supermarket!5e0!3m2!1sen!2set!4v1696019662532!5m2!1sen!2set" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		
+			<!-- Email and Phone number on the right -->
+			<div class="contact-info">
+				<h2 class="h2">Phone Number:- <a href="tel:+251-904262728">+251-904262728</a></h2>
+				<h2 class="h2"> Email:-<a href="mailto:nsc.eth@gamil.com">nsc.eth@gamil.com</a></h2>
+			</div>
+		
+			<!-- Clear the floats to ensure proper alignment -->
+			<p>&copy; 2023 About Ethiopia(NSC)</p>
+		</footer>
+	</body>
+</html>

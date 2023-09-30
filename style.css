@@ -1,0 +1,220 @@
+/* Global styles */
+body {
+	background-image: url(''); /* Replace 'ethiopian_flag.jpg' with the actual file path of your Ethiopian flag image */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* Header styles */
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px 0;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 36px;
+	float: left;
+}
+
+header nav {
+	float: right;
+	margin-top: 10px;
+}
+
+header nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav li {
+	float: left;
+	margin-left: 20px;
+}
+
+header nav li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Main content styles */
+main {
+	padding: 40px 0;
+}
+
+section {
+	margin-bottom: 40px;
+}
+
+section h2 {
+	font-size: 24px;
+}
+
+section p {
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Footer styles */
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px 0;
+}
+
+footer p {
+	margin: 0;
+	font-size: 14px;
+	text-align: center;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+	header h1 {
+		float: none;
+		text-align: center;
+	}
+
+	header nav {
+		float: none;
+		margin-top: 20px;
+	}
+
+	header nav ul {
+		display: flex;
+		flex-direction: column;
+	}
+
+	header nav li {
+		float: none;
+		margin-left: 0;
+		margin-bottom: 10px;
+	}
+
+	main {
+		padding: 20px 0;
+	}
+
+	section h2 {
+		font-size: 20px;
+	}
+
+	section p {
+		font-size: 14px;
+	}
+}
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 1rem;
+  }
+  
+  header {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 1rem 0;
+  }
+  
+  header h1 {
+	margin: 0;
+  }
+  
+  main {
+	padding: 2rem 0;
+  }
+  
+  section {
+	margin-bottom: 2rem;
+  }
+  
+  label {
+	display: block;
+	margin-bottom: 0.5rem;
+  }
+  
+  input[type="text"] {
+	width: 100%;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+	background-color: #666;
+  }
+  
+  #result {
+	margin-top: 1rem;
+	font-weight: bold;
+  }
+  /* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    overflow: hidden; /* Clear the floats */
+}
+
+/* Map Styles */
+.map {
+    float: left;
+    width: 50%; /* Adjust the width as needed */
+    margin-right: 10px;
+}
+
+/* Contact Information Styles */
+.contact-info {
+    float: left;
+    width: 50%; /* Adjust the width as needed */
+}
+
+.contact-info p {
+    margin: 0 0 10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive CSS - Adjust as needed */
+@media (max-width: 768px) {
+    .map, .contact-info {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+}
+.h2{
+	text-align: center;
+}
+
